@@ -36,6 +36,7 @@ export const ArchiveBlock: React.FC<
         relationTo={relationTo}
         populatedDocs={populatedDocs}
         populatedDocsTotal={populatedDocsTotal}
+        // @ts-ignore
         selectedDocs={selectedDocs}
         categories={categories}
         limit={limit}
