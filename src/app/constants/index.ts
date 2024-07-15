@@ -37,11 +37,11 @@ export const profileNavItems = [
     url: '/account',
     icon: '/assets/icons/user.svg',
   },
-  // {
-  //   title: 'My Purchases',
-  //   url: '/account/purchases',
-  //   icon: '/assets/icons/purchases.svg',
-  // },
+  {
+    title: 'Reporte',
+    url: 'https://www.canva.com/design/DAGLDY9hA2g/8OlTMwdS5v8i-Ghli5kFhw/view?utm_content=DAGLDY9hA2g&utm_campaign=designshare&utm_medium=link&utm_source=editor',
+    icon: '/assets/icons/purchases.svg',
+  },
   // {
   //   title: 'My Orders',
   //   url: '/account/orders',
