@@ -43,7 +43,7 @@ export const LogoutPage: React.FC<{
               </Fragment>
             )}
             {` Para volver a iniciar sesión, `}
-            <Link href="/login">lick aquí</Link>
+            <Link href="/login">Click aquí</Link>
             {'.'}
           </p>
         </div>
