@@ -49,7 +49,7 @@ export const ProductHero: React.FC<{
           <h6>Descripción</h6>
           <p>{description}</p>
         </div>
-        <a
+        {/* <a
           href="https://us.onfido.app/l/37e5dfdc-f04a-446e-b56b-87465d8a3377"
           target="_blank"
           rel="noopener noreferrer"
@@ -59,13 +59,13 @@ export const ProductHero: React.FC<{
         </a>
 
         <a
-          href="https://market-place-sylicon-3-0.vercel.app/collection/137/0x7afb62B54d52EE104FF1C0F1Ddb54A511AE6839F"
+          href="https://market-place-sylicon-3-0.vercel.app/"
           target="_blank"
           rel="noopener noreferrer"
           className={classes.addToCartButton}
         >
           <button className={classes.button}>Comprar</button>
-        </a>
+        </a> */}
       </div>
     </Gutter>
   )

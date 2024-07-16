@@ -31,7 +31,7 @@ export const HeaderNav: React.FC<{ header: HeaderType }> = ({ header }) => {
           onClick={() => (window.location.href = '/login')}
         />
       )}
-      {/* {user && <CartLink />} */}
+      {user && <Link href="https://market-place-sylicon-3-0.vercel.app/">Market Place</Link>}
     </nav>
   )
 }

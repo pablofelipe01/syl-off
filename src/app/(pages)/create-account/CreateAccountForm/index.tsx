@@ -1,9 +1,10 @@
 'use client'
 
-import React, { useCallback, useRef, useState } from 'react'
+import React, { useCallback, useEffect, useRef, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import Link from 'next/link'
 import { useRouter, useSearchParams } from 'next/navigation'
+import PopUp from 'src/app/_components/PopUp/PopUp'
 
 import { Button } from '../../../_components/Button'
 import { Input } from '../../../_components/Input'
@@ -26,6 +27,7 @@ const CreateAccountForm: React.FC = () => {
   const router = useRouter()
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
+  const [showPopUp, setShowPopUp] = useState(true)
 
   const {
     register,
@@ -74,66 +76,64 @@ const CreateAccountForm: React.FC = () => {
   )
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className={classes.form}>
-      {/* <p>
-        {`This is where new customers can signup and create a new account. To manage all users, `}
-        <Link href="/admin/collections/users">login to the admin dashboard</Link>
-        {'.'}
-      </p> */}
-      <Message error={error} className={classes.message} />
-      <Input
-        name="email"
-        label="Email"
-        required
-        register={register}
-        error={errors.email}
-        type="email"
-      />
-      <Input
-        name="name"
-        label="Identificación CC/NIT"
-        required
-        register={register}
-        error={errors.name}
-        type="text"
-      />
-      <Input
-        name="name"
-        label="Nombre Completo"
-        required
-        register={register}
-        error={errors.name}
-        type="text"
-      />
-      <Input
-        name="password"
-        type="password"
-        label="Password"
-        required
-        register={register}
-        error={errors.password}
-      />
-      <Input
-        name="passwordConfirm"
-        type="password"
-        label="Confirmar Password"
-        required
-        register={register}
-        validate={value => value === password.current || 'The passwords do not match'}
-        error={errors.passwordConfirm}
-      />
-      <Button
-        type="submit"
-        label={loading ? 'Processing' : 'Sign up'}
-        disabled={loading}
-        appearance="primary"
-        className={classes.submit}
-      />
-      <div>
-        {'Ya tiene cuenta? '}
-        <Link href={`/login${allParams}`}>Login</Link>
-      </div>
-    </form>
+    <>
+      {showPopUp && <PopUp onClose={() => setShowPopUp(false)} />}
+      <form onSubmit={handleSubmit(onSubmit)} className={classes.form}>
+        <Message error={error} className={classes.message} />
+        <Input
+          name="email"
+          label="Email"
+          required
+          register={register}
+          error={errors.email}
+          type="email"
+        />
+        <Input
+          name="name"
+          label="Identificación CC/NIT"
+          required
+          register={register}
+          error={errors.name}
+          type="text"
+        />
+        <Input
+          name="name"
+          label="Nombre Completo"
+          required
+          register={register}
+          error={errors.name}
+          type="text"
+        />
+        <Input
+          name="password"
+          type="password"
+          label="Password"
+          required
+          register={register}
+          error={errors.password}
+        />
+        <Input
+          name="passwordConfirm"
+          type="password"
+          label="Confirmar Password"
+          required
+          register={register}
+          validate={value => value === password.current || 'The passwords do not match'}
+          error={errors.passwordConfirm}
+        />
+        <Button
+          type="submit"
+          label={loading ? 'Processing' : 'Sign up'}
+          disabled={loading}
+          appearance="primary"
+          className={classes.submit}
+        />
+        <div>
+          {'Ya tiene cuenta? '}
+          <Link href={`/login${allParams}`}>Login</Link>
+        </div>
+      </form>
+    </>
   )
 }
 
